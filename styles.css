@@ -1,13 +1,22 @@
 @import url('https://fonts.google.com/specimen/Source+Serif+4');
 :root{
-    --text-font-size: 1vw;
+    --font-family: "DM Sans", sans-serif;
+
+    --font-color: #101118;
+    --font-color-inverse: #fff;
+    --accent-color: #9D8BF2;
+
+    --background-color: #FCFCFD;
+    --background-color-highlighted: #fff;
+
+    --max-page-width: 60rem;
 }
 
 body{
     display: block;
     align-items: center;
     height: 100vh;
-    background-color: #FCFCFD;
+    background-color: var(--background-color);
     margin: 0;
     box-sizing: border-box;
 }
@@ -20,8 +29,7 @@ body{
 }
 
 .page-content {
-    max-width: 60rem;
-    /*padding: 0 5rem;*/
+    max-width: var(--max-page-width);
     overflow: hidden;
 }
 
@@ -38,10 +46,10 @@ h2{
 }
 
 .text{
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-family);
     margin-top: 5px;
     margin-bottom: 5px;
-    color: #101118;
+    color: var(--font-color);
     text-align: left;
 }
 
@@ -66,7 +74,7 @@ h2{
 .box{
     border-radius: 20px; 
     border: 1px solid rgb(207, 207, 207);
-    background-color: #fff;
+    background-color: var(--background-color-highlighted);
     box-shadow: 0px 0px 12px -9px rgba(129, 129, 129, 1);
 }
 
@@ -113,7 +121,7 @@ img{
 
 /*DONATION NOTIFICATION BAR*/
 .donators-section {
-    background-color: #9D8BF2;
+    background-color: var(--accent-color);
     padding: 10px;
     justify-content: center;
     box-shadow: 0px 2px 20px -8px rgba(129, 129, 129, 1);
@@ -122,6 +130,8 @@ img{
 }
 
 .donation-text{
+    color: var(--font-color-inverse) !important;
+    /*If you want to change the duration of the animation, you have to change the messageChangeInterval in app.js to the same value*/
     animation: slideInAndOut 5s ease infinite;
     text-align: center !important;
 }
@@ -171,7 +181,7 @@ img{
 .progress-bar {
     width: 0;
     height: 30px;
-    background-color: #9D8BF2;
+    background-color: var(--accent-color);
     transition: width 1s ease-in-out;
     display: flex;
     align-items: center;
@@ -179,7 +189,7 @@ img{
 
 
 .progress-bar-text{
-    color: #fff !important;
+    color: var(--font-color-inverse) !important;
     margin: 0px !important;
     padding: 0px !important;
     padding-left: 10px !important;
@@ -224,7 +234,7 @@ img{
 }
 
 .read-more-btn {
-    color: #9D8BF2 !important;
+    color: var(--accent-color) !important;
     cursor: pointer;
     margin-top: 10px;
     text-decoration: underline;
@@ -253,7 +263,7 @@ img{
 
 .input-field {
     padding: 10px;
-    background-color: #fff;
+    background-color: var(--background-color-highlighted);
     border: 1px solid #d4d4d4;
     border-radius: 10px;
     color: #b7bcdd;
@@ -296,13 +306,13 @@ img{
 }
 
 .donation-button {
-    color:#fff !important;
+    color:var(--font-color-inverse) !important;
     text-align: center !important;
     font-size: 1rem;
 
     border: none;
     border-radius: 10px;
-    background-color: #9D8BF2;
+    background-color: var(--accent-color);
     padding: 10px 20px;
 
     cursor: pointer;
@@ -315,7 +325,7 @@ img{
 }
 
 .donation-button a{
-    color: #fff !important;
+    color: var(--font-color-inverse) !important;
     text-decoration: none;
 }
 
@@ -372,7 +382,7 @@ img{
 }
 
 .reward-amount{
-    color: #9D8BF2 !important;
+    color: var(--accent-color) !important;
     font-size: 1.5rem;
 }
 
@@ -445,13 +455,13 @@ img{
 }
 
 .submit-button {
-    color:#fff !important;
+    color:var(--font-color-inverse) !important;
     text-align: center !important;
     font-size: 1rem;
 
     border: none;
     border-radius: 10px;
-    background-color: #9D8BF2;
+    background-color: var(--accent-color);
     padding: 10px 5px;
     width: 100%;
 }
@@ -490,7 +500,7 @@ img{
     transition: .5s;
 }
 .footer-link:hover{
-    color: #fff;
+    color: var(--font-color-inverse);
     cursor: pointer;
 }
 
