@@ -338,6 +338,15 @@ img{
     border-top: solid 1px #d4d4d4;
     border-bottom: solid 1px #d4d4d4;
 }
+
+form p a{
+    text-decoration: underline;
+}
+
+form p a:hover{
+    cursor: pointer;
+}
+
 /*-------------------------*/
 
 /*REWARDS-SECTION*/
