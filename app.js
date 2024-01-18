@@ -61,6 +61,10 @@ function toggleReadMore() {
 const donationText = document.getElementById('donationText');
 let messageIndex = 0; //index of message
 
+
+//If you want to change the Interval, you have to change the animation duration in styles.css to the same value
+let messageChangeInterval = 5//seconds;
+
 //Array of messages - dummy data
 let messages = [
     "Dale Carnegie donated $20",
@@ -78,7 +82,7 @@ function showNotification() {
 
 showNotification();
 
-setInterval(showNotification, 5000); //Change the Message every 5s
+setInterval(showNotification, messageChangeInterval*1000); //Change the message every 5s
 
 function updateNotification(messageIndex) {
     //Check if the index is bigger than the amount of messages - if it is, bring it back to zero
