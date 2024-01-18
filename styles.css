@@ -1,0 +1,496 @@
+@import url('https://fonts.google.com/specimen/Source+Serif+4');
+:root{
+    --text-font-size: 1vw;
+}
+
+body{
+    display: block;
+    align-items: center;
+    height: 100vh;
+    background-color: #FCFCFD;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.page-content {
+    max-width: 60rem;
+    /*padding: 0 5rem;*/
+    overflow: hidden;
+}
+
+h1{
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: 600;
+}
+
+h2{
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+    font-weight: 500;
+}
+
+.text{
+    font-family: "DM Sans", sans-serif;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #101118;
+    text-align: left;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 50px 0;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.margin-top{
+    margin-top: 30px;
+}
+
+.margin-bottom{
+    margin-bottom: 20px;
+}
+
+.box{
+    border-radius: 20px; 
+    border: 1px solid rgb(207, 207, 207);
+    background-color: #fff;
+    box-shadow: 0px 0px 12px -9px rgba(129, 129, 129, 1);
+}
+
+.outline-box
+{
+    border-radius: 10px; 
+    border: 1px solid rgb(207, 207, 207);
+    padding: 10px 5px;
+}
+
+.small-shadow{
+    box-shadow: 0px 2px 20px -15px rgba(185, 185, 185, 1);
+}
+
+/* HEADER */
+.header{
+    display: flex;
+    justify-content: center;
+    background-color: #101118;
+    padding: 20px;
+    margin: 0;
+}
+
+img{
+    width: 50px;
+}
+
+/*------------*/
+
+/*DONATION NOTIFICATION BAR*/
+.donators-section {
+    background-color: #9D8BF2;
+    padding: 10px;
+    justify-content: center;
+    box-shadow: 0px 2px 20px -8px rgba(129, 129, 129, 1);
+    margin: 0 !important;
+    overflow: hidden;
+}
+
+.donation-text{
+    animation: slideInAndOut 5s ease infinite;
+    text-align: center !important;
+}
+
+@keyframes slideInAndOut {
+    0% {
+        transform: translateY(-200%);
+    }
+
+    25%{
+        transform: translateY(0%);
+    }
+
+    75%{
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(200%);
+    }
+}
+/*---------------*/
+
+/* THE UPPER SECTION: Headline, Description & Donation Box */
+.upper-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-container{
+    max-width: 100%;
+}
+
+@media (min-width: 1000px){
+    .container{
+        flex-direction: row;
+    }
+
+    .content-container{
+        max-width: 55%;
+    }
+
+    .rewards-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #closeNotification {
+        right: 60px;
+    }
+}
+
+/*Progress-Bar*/
+.progress-bar-container{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid #d4d4d4;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.progress-container {
+    width: 100%;
+    background-color: #eee;
+    border-radius: 50px;
+    overflow: hidden;
+    margin: 10px 0 10px 0;
+}
+
+.progress-bar {
+    width: 0;
+    height: 30px;
+    background-color: #9D8BF2;
+    transition: width 1s ease-in-out;
+    display: flex;
+    align-items: center;
+}
+
+
+.progress-bar-text{
+    color: #fff !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    padding-left: 10px !important;
+}
+/*--*/
+
+/*DONATION INFORMATION - The info, such as the goal, the total donors, start time*/
+.donation-information {
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
+/*Also used for the labels and currency in the Donation Box */
+.info-small {
+    font-size: 0.8rem;
+    color: #747474 !important;
+    font-weight: 500;
+}
+
+.info-big {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+/*The description with the 'read more'-function*/
+.description-text {
+    position: relative;
+    overflow: hidden;
+    max-height: 15em; /* Adjust as needed */
+    transition: max-height 0.5s ease-in-out;
+}
+
+.description-text.show-more {
+    max-height: none;
+}
+
+.read-more-btn {
+    color: #9D8BF2 !important;
+    cursor: pointer;
+    margin-top: 10px;
+    text-decoration: underline;
+    transition: color 0.3s ease-in-out;
+}
+/*-------------------------*/
+
+/*DONATION BOX - the box on the right with the stripe checkout*/
+.donation-container{
+    padding: 20px 15px 20px 15px;
+    width: 80%;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.input-container {
+	position: relative;
+	width: 100%;
+    box-sizing: border-box;
+}
+
+.input-field {
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #d4d4d4;
+    border-radius: 10px;
+    color: #b7bcdd;
+    outline: none;
+    z-index: 0;
+    -webkit-tap-highlight-color: transparent;
+    line-height: 1;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.amount{
+    padding-left: 1.5rem !important;
+}
+
+.amount-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+.amount-input {
+    display: flex;
+    align-items: center;
+    flex: 1 1 0%;
+}
+
+.currency{
+    padding-left: 0.75rem !important;
+    margin: 0px !important;
+    position: absolute;
+    z-index: 10;
+}
+
+.currency-menu {
+    padding: 10px;
+    border-radius: 10px !important;
+    cursor: pointer;
+}
+
+.donation-button {
+    color:#fff !important;
+    text-align: center !important;
+    font-size: 1rem;
+
+    border: none;
+    border-radius: 10px;
+    background-color: #9D8BF2;
+    padding: 10px 20px;
+
+    cursor: pointer;
+}
+
+#fund-button{
+    width: 100% !important;
+}
+
+#fund-button:hover{
+    cursor:not-allowed;
+}
+
+.hidden-section {
+    display: none;
+    border-top: solid 1px #d4d4d4;
+    border-bottom: solid 1px #d4d4d4;
+}
+/*-------------------------*/
+
+/*REWARDS-SECTION*/
+.rewards{
+    flex-direction: column !important;
+    gap: 0px !important;
+}
+
+.rewards-container {
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+}
+
+.reward{
+    padding: 10px 15px 10px 15px;
+    margin: 0px 10px 0px 10px;
+    margin-bottom: 10px;
+    min-width: 15rem;
+    transition: 0.5s ease;
+    min-height: 100%;
+    max-height: 14rem;
+}
+
+.reward:hover{ 
+    transform: translateY(-10px);
+    box-shadow: 0px 7px 25px -15px rgba(128, 128, 128, 1);
+}
+
+.reward-header {
+    margin-bottom: 1.2rem;
+}
+
+.reward-text {
+    text-align: center !important;
+    margin-top: 5px !important;
+}
+
+.reward-title{
+    font-size: 1rem;
+}
+
+.reward-amount{
+    color: #9D8BF2 !important;
+    font-size: 1.5rem;
+}
+
+.reward-description{
+    text-align: center;
+}
+/*-------------------------*/
+
+
+/*FAQ-SECTION*/
+.accordion {
+    display: block;
+    flex-direction: column !important;
+}
+
+.accordion-item .accordion-item-title {
+    position: relative;
+    margin: 0;
+    display: flex;
+    width: 100%;
+    font-size: 15px;
+    cursor: pointer;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    padding: 14px 20px;
+    box-sizing: border-box;
+    align-items: center;
+}
+.accordion-item .accordion-item-desc {
+    display: none;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 300;
+    color: #444;
+    border-top: 1px dashed #ddd;
+    padding: 10px 20px 20px;
+    box-sizing: border-box;
+}
+.accordion-item input[type="checkbox"] {
+    position: absolute;
+    height: 0;
+    width: 0;
+    opacity: 0;
+}
+.accordion-item input[type="checkbox"]:checked ~ .accordion-item-desc {
+    display: block;
+}
+.accordion-item
+    input[type="checkbox"]:checked
+    ~ .accordion-item-title
+    .icon:after {
+    content: "-";
+    font-size: 20px;
+}
+.accordion-item input[type="checkbox"] ~ .accordion-item-title .icon:after {
+    content: "+";
+    font-size: 20px;
+}
+.accordion-item:first-child {
+    margin-top: 0;
+}
+.accordion-item .icon {
+    margin-left: 14px;
+}
+
+.faqContainer{
+    display: flex; 
+    gap: 0.3rem;
+    margin-top: 10px;
+}
+
+.submit-button {
+    color:#fff !important;
+    text-align: center !important;
+    font-size: 1rem;
+
+    border: none;
+    border-radius: 10px;
+    background-color: #9D8BF2;
+    padding: 10px 5px;
+    width: 100%;
+}
+/*----------------*/
+
+/*FOOTER*/
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #101118;
+    padding: 20px;
+    margin: 0;
+}
+
+.footer-container{
+    align-items: center;
+    margin: 50px 0px;
+    width: 100%;
+    max-width: 60rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+}
+
+a{
+    line-height: 1.5em;
+    color:#b7bcdd;
+    transition: .5s;
+}
+a:hover{
+    color: #fff;
+    cursor: pointer;
+}
+
+.footer-text{
+    text-align: right;
+}
+/*----------------*/
