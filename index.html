@@ -1,0 +1,340 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Medito Fundraising</title>
+
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <link rel="icon" href="https://meditofoundation.org/media/site/21fe2a12b1-1620759820/favicon-512x512.png">
+    <link href="https://fonts.google.com/specimen/Source+Serif+4">
+    <link href="https://fonts.google.com/specimen/DM+Sans?query=dm+sans">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    </div>
+    <div class="header">
+        <a href="https://meditofoundation.org/"><img src="https://meditofoundation.org/media/site/21fe2a12b1-1620759820/favicon-512x512.png" alt="Medito Foundation"></a>
+    </div>
+    <div class="donators-section" id="NotificationSection">
+        <p class="donation-text text" id="donationText">Dale Carnegie from New York just donated $20!</p>
+    </div>
+    <div class="page">
+        <div class="page-content">
+            <div class="upper-container">
+                <div class="container">
+                    <!--FUNDRAISING HEADLINE, PROGRESS BAR, DESCRIPTION, ...-->
+                    <div class="content-container">
+                        <!-- HEADLINE -->
+                        <h1 class="text">Create Ad Campaign in the Tram</h1>
+                        <div class="progress-bar-container">
+                            <div class="progress-container">
+                                <div class="progress-bar" id="myProgressBar"><span class="progress-bar-text text" id="targetProgressText"></span></div>
+                            </div>
+                            <div class="donation-information">
+                                <div class="info"> <!--WILL BE CHANGED WITH JS-->
+                                    <span class="info-small text" id="targetFundText"></span>
+                                    <span class="info-big text" id="currentFundText"></span>
+                                </div>
+                                <div class="info">
+                                    <span class="info-small text">
+                                        Total Donors:
+                                    </span>
+                                    <span class="info-big text" id="totalDonorsText">
+                                        2478 <!--DUMMY DATA-->
+                                    </span>
+                                </div>
+                                <div class="info">
+                                    <span class="info-small text">
+                                        Start Date:
+                                    </span>
+                                    <!--SET THE START DATE MANUALLY-->
+                                    <span class="info-big text">
+                                        January 9th
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--DESCIRPTION OF THE FUNDRAISING-->
+                        <div class="description-text text" id="descriptionTextContainer">
+                            Welcome to our fundraising campaign for the ultimate Zen experience! We are on a mission to bring tranquility to the masses through a captivating Ad Campaign in the Tram for our meditation app.
+                            <br><br>
+                            Imagine commuters finding solace in the midst of their daily hustle, guided by the soothing voice of our meditation app.
+                            <br><br>
+                            With your support, we can turn this vision into reality and make public spaces a sanctuary for mindfulness.
+                            <br><br>
+                            Join us in spreading calmness and positivity to every corner of the city!
+                            <br><br>
+                            This is filler text so you can see the "Read More" function in action: Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.
+                            Praesent mauris. Fusce nec tellus sed augue semper porta.
+                            Mauris massa. Vestibulum lacinia arcu eget nulla.
+                            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                        </div>
+                    
+                        <p class="read-more-btn text" onclick="toggleReadMore()">Read More</p>
+                    </div>
+
+                    <!--DONATION BOX-->
+                    <div class="donation-container box" id="donationContainer">
+                        <!--HEADLINE-->
+                        <h3 class="text margin-bottom">Help us on our mission.</h3>
+                        <br>
+                        <!--FORM-->
+                        <form class="input">
+                            <!--FUNDING AMOUNT-->
+                            <div class="input-container margin-bottom">
+                                <label for="amount" class="info-small text">Funding Amount</label>
+                                <div class="amount-container">
+                                    <div class="amount-input">
+                                        <span id="currencySymbol" class="currency info-small text">$</span>
+                                        <input name="amount" type="number" class="input-field amount text small-shadow" placeholder="50"/>
+                                    </div>
+                                    <!--CURRENCY SELECTOR-->
+                                    <select id="currencyMenu" class="currency-menu box">
+                                        <option value="USD" class="text">USD</option>
+                                        <option value="EUR" class="text">EUR</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!--EMAIL-->
+                            <div class="input-container margin-bottom">
+                                <label for="email" class="info-small text">Contact Details</label>
+                                <input name="email" type="email" class="input-field text small-shadow" placeholder="Enter your email address" />
+                            </div>
+                            <div class="hidden-section margin-bottom" id="errorSection">
+                                <!--ERROR MESSAGE-->
+                                <p class="text" style="color: #e32636;">Invalid E-Mail or funding amount!</p>
+                            </div>
+                            <div class="hidden-section margin-bottom" id="stripeCheckoutSection">
+                                <!-- Add your Stripe Checkout elements here -->
+                                <!-- This section will be initially hidden and displayed on button click -->
+                                <p class="text">STRIPE CHECKOUT</p>
+                            </div>
+                            <!--BUTTON THAT OPENS UP SHOPIFY CHECKOUT-->
+                            <div class="form-button">
+                                <button class="donation-button text" id="fundButton">
+                                    Fund this issue
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!--REWARDS SECTION-->
+            <div class="rewards container">
+                <!--HEADLINE-->
+                <h2 class="text">Rewards</h2>
+                <div class="rewards-container margin-top">
+                    <!--REWARD 1-->
+                    <div class="reward box">
+                        <div class="reward-header">
+                            <h3 class="reward-title reward-text text">Harmony</h3>
+                            <p class="reward-amount reward-text text"> $10-$50 </p>
+                        </div>
+                        <div class="reward-description">
+                            <ul class="reward-text">
+                                <li class="text">
+                                    <p class="text"> Early access to new app-functions </p>
+                                </li>
+                                <li class="text">
+                                    <p class="text"> Personalized thank-you card </p>
+                                </li>
+                                <li class="text">
+                                    <p class="text"> Recognition on our website </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--REWARD 2-->
+                    <div class="reward box">
+                        <div class="reward-header">
+                            <h3 class="reward-title reward-text text">Serenity</h3>
+                            <p class="reward-amount reward-text text"> $50-$200 </p>
+                        </div>
+                        <div class="reward-description">
+                            <ul class="reward-text">
+                                <li class="text">
+                                    <p class="text"> Behind-the-scenes video access </p>
+                                </li>
+                                <li class="text">
+                                    <p class="text"> Limited edition merchandise </p>
+                                </li>
+                                <li class="text">
+                                    <p class="text"> Social media shoutout </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--REWARD 3-->
+                    <div class="reward box">
+                        <div class="reward-header">
+                            <h3 class="reward-title reward-text text">Bliss</h3>
+                            <p class="reward-amount reward-text text"> $200+ </p>
+                        </div>
+                        <div class="reward-description">
+                            <ul class="reward-text">
+                                <li class="text">
+                                    <p class="text"> Private online meeting </p>
+                                </li>
+                                <li class="text">
+                                    <p class="text"> Featured in Tram Ad Campaign </p>
+                                </li>
+                                <li class="text">
+                                    <p class="text"> A big, fat hug</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="donation-button text margin-top">
+                    <a href="#donationContainer" class="text">Donate Now</a>
+                </button>
+            </div>
+
+            <!--FAQ-->
+            <div class="accordion container">
+                <!--HEADLINE-->
+                <h2 class="text" style="text-align: center !important;">Frequently Asked Questions</h2>
+                <div class="accordeon-container margin-top box">
+
+                    <!--
+                        HOW TO ADD A NEW QUESTION TO THE FAQ:
+                            1. Copy and Paste the div with the class "accordeon-item"
+                            2. Increase the number after "accordion" in the id
+                                f.e.: "id='accordion1" -> "id='accordion2"
+                            3. Increase the number after "accordion" in the 
+                                f.e.: "for='accordion1" -> "for='accordion2"
+                    -->
+
+                    <div class="text accordion-item">
+                        <input type="checkbox" id="accordion1">
+                        <label for="accordion1" class="accordion-item-title"><span class="icon"></span>
+                            How will my donation contribute to the Ad Campaign?
+                        </label>
+                        <div class="accordion-item-desc">
+                            Your donation directly supports the creation, production, and placement of our meditation app ads in Trams, ensuring that more people discover the benefits of mindfulness during their daily commute.
+                        </div>
+                    </div>
+                
+                    <div class="text accordion-item">
+                        <input type="checkbox" id="accordion2">
+                        <label for="accordion2" class="accordion-item-title"><span class="icon"></span>
+                            When will the Tram Ad Campaign be launched?
+                        </label>
+                        <div class="accordion-item-desc">
+                            The campaign is scheduled to launch six weeks after the completion of our fundraising goal. We'll keep our supporters updated with the exact dates through regular updates on our website and social media channels.
+                        </div>
+                    </div>
+                
+                    <div class="text accordion-item">
+                        <input type="checkbox" id="accordion3">
+                        <label for="accordion3" class="accordion-item-title"><span class="icon"></span>
+                            Can I contribute even if I'm unable to donate financially?
+                        </label>
+                        <div class="accordion-item-desc">
+                            Absolutely! You can support us by spreading the word about our campaign on social media, sharing our updates, and encouraging others to join the movement. Every bit of support counts!
+                        </div>
+                    </div>
+
+                    <div class="text accordion-item">
+                        <input type="checkbox" id="accordion4">
+                        <label for="accordion4" class="accordion-item-title"><span class="icon"></span>
+                            What happens if the fundraising goal is not met?
+                        </label>
+                        <div class="accordion-item-desc">
+                            If we don't reach our goal, all donations will still be used to promote our meditation app. While the Tram Ad Campaign may be scaled down, we are committed to maximizing the impact of every contribution.
+                        </div>
+                    </div>
+                
+                    <div class="text accordion-item">
+                        <input type="checkbox" id="accordion5">
+                        <label for="accordion5" class="accordion-item-title"><span class="icon"></span>
+                            Is my donation tax-deductible?
+                        </label>
+                        <div class="accordion-item-desc">
+                            Yes, your donation is tax-deductible. We will provide a receipt with all the necessary information for tax purposes once the fundraising campaign concludes.
+                        </div>
+                    </div>
+
+                    <!--CONTACT FORM-->
+                    <div class="text accordion-item">
+                        <input type="checkbox" id="accordion6">
+                        <label for="accordion6" class="accordion-item-title"><span class="icon"></span>
+                            Got any more questions?
+                        </label>
+                        <div class="accordion-item-desc">
+                            <form action="action_page.php">
+                                <div class="faqContainer">
+                                    <div class="name" style="display: flex; flex-direction:column">
+                                        <label for="fname">First Name</label>
+                                        <input type="text" id="fname" name="firstname" placeholder="" class="outline-box">
+                                    </div>
+                                    <div class="name" style="display: flex; flex-direction:column">
+                                        <label for="lname">Last Name</label>
+                                        <input type="text" id="lname" name="lastname" placeholder="" class="outline-box">
+                                    </div>
+                                </div>
+                                <div class="faqContainer" style="flex-direction:column">                        
+                                    <label for="subject">Question</label>
+                                    <textarea id="subject" name="subject" placeholder="I have a question about..." class="outline-box" style="min-height:100px;"></textarea>
+                                </div>
+                                <input type="submit" value="Submit" class="submit-button text margin-top">
+                            </form>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+
+    <!--FOOTER-->
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <div class="footer-link-container">
+                    <h2 class="text" style="color: #fff;">
+                        Navigate
+                    </h2>
+                    <span class="text" style="color: #fff;">
+                        <a class="footer-link">Home</a><br>
+                        <a class="footer-link">App</a><br>
+                        <a class="footer-link">Blog</a><br>
+                        <a class="footer-link">Retreats</a><br>
+                        <a class="footer-link">Resources</a><br>
+                        <a class="footer-link">About</a><br>
+                        <a class="footer-link">Volunteer</a><br>
+                    </span>
+                </div>
+                <div class="footer-link-container">
+                    <h2 class="text" style="color: #fff;">
+                        The Medito app
+                    </h2>
+                    <span class="text" style="color: #fff;">
+                        <a class="footer-link">Download on the App store</a><br>
+                        <a class="footer-link">Download on Google Play</a><br>
+                    </span>
+                </div>
+                <div class="footer-link-container">
+                    <h2 class="text" style="color: #fff;">
+                        Foundation
+                    </h2>
+                    <span class="text" style="color: #fff;">
+                        <a class="footer-link">About</a><br>
+                        <a class="footer-link">License</a><br>
+                        <a class="footer-link">Privacy Policy</a><br>
+                        <a class="footer-link">Terms of Service</a><br>
+                        <a class="footer-link">Contact</a><br>
+                    </span>
+                </div>
+            </div>
+            <div class="footer-text margin-top">
+                <span class="text" style="color: #fff;">
+                    Medito Foundation or in Dutch, Stichting Medito <br> Non-profit organisation registered in the Netherlands 🇳🇱 <br> hi@meditofoundation.org - KvK-nummer: 75284251 - RSIN: 860222627
+                </span>
+            </div>
+        </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
