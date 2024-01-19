@@ -3,6 +3,23 @@ _**MEDITO FUNRAISING ONE-PAGE WEBSITE**_
 A lightweight, responsible and versatile one-pager for all kinds of fundraising initiatives by medito.
 Thoroughly commented, so you just need to read through the code to understand and modify the website.
 
+**How to integrate Stripe API**
+  - Put the code for the Checkout in the div with the id '#stripeCheckoutSection'
+  - The order amount and currency code atr stored for easy accessibility (donationAmount & donationCurrency in app.js)
+
+**Why this is the best option**
+  - Easy to integrate Stripe
+  - Thorougly documented, so you'll know this code better than yourself
+  - Exactly as your description wanted the website to be
+  - Design is _very very_ close to the one from https://polar.sh/meditohq/medito-app/issues/195 , just like you wanted it
+  - The use of :root in the css code makes the website easy to customize
+  - Premade function to add a new message of donators at the top of the page
+  - JavaScript code contains variables for everything that needs to be a variable (f.e. fund amount, total donors), so even easier to use
+  - All in all, this website is all you wanted and basically Plug-and-Play
+
+
+___DESCRIPTION___
+
 **Title and Description:**
   - A clear and adjustable title that can be set to reflect the current fundraising goal
   - A brief description that contextualizes the fundraising initiative. Also customizable of course.
