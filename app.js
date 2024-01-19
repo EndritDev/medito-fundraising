@@ -119,9 +119,11 @@ function updateSelectedCurrency() {
     const selectedCurrencyData = currencies.find(currency => currency.code === selectedCurrencyCode);
     if (selectedCurrencyData) {
         currencySymbol.textContent = selectedCurrencyData.symbol;
+        selectedCurrency = selectedCurrencyData.code;
     }
 }
 
+let selectedCurrency = "USD";
 // Array of supported currencies
 const currencies = [
     { code: 'USD', symbol: '$' },
@@ -140,6 +142,7 @@ const emailField = document.querySelector('input[name="email"]');
 const amountField = document.querySelector('input[name="amount"]');
 
 let donationAmount = 0; //The variable you need to use for your stripe chckout
+let donationCurrency = selectedCurrency; //The variable you need to use for your stripe chckout
 
 // Add event listener to the button to toggle the display of the Stripe Checkout section
 fundButton.addEventListener('click', function (event) {
@@ -166,6 +169,7 @@ function toggleStripeCheckoutSection() {
     //Set the donation amount to whatever was put in the field for later use with the Stripe API
     //If the checkout is displayed, that means that the amount field is filled in so we can store the donation amount here
     donationAmount = amountField.value;
+    donationCurrency = selectedCurrency;
 
     stripeCheckoutSection.style.display = 'block'; //Activate the Stripe Checkout section
     errorSection.style.display = 'none'; //Deactivate the error section ("Invalid E-Mail or funding amount!") just in case it was displayed
